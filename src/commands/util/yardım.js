@@ -65,7 +65,8 @@ if (!args.command.toLowerCase()) return msg.say(yardim);
 }
 const Discord = require("discord.js");
 const hatam = new Discord.RichEmbed()
-.setDescription(`Girdiğiniz komut yanlış, şu şekilde kullanacaksınız:\n**+yardım efekt**`)
+.setDescription(`Girdiğiniz komut yanlış, şu şekilde kullanacaksınız:\n+yardım efekt`)
+.setColor("#f4c2c2")
 if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(hatam)
         if (this.client.registry.groups.has(args.command.toLowerCase())) group = this.client.registry.groups.get(args.command.toLowerCase());
 
@@ -75,7 +76,7 @@ if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(
         .setDescription(`
         ${group.commands.map(g => `[${g.name}](https://bit.ly/cayreyis): ${g.description}`).join("\n")}
                 `)
-        .setColor(0xf4a460)
+        .setColor("#f4c2c2")
         msg.embed(helpbed)
 
 
