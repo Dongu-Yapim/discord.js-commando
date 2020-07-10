@@ -25,12 +25,12 @@ module.exports = class HelpCommand extends Command {
 const Discord = require("discord.js");
 const yardim = new Discord.RichEmbed()
 .setTitle("Çay Bot Tüm Komutlar Listesi")
-.addField(":cay~1:  +anakomutlar", "Çayın temel olan çay iç ve benzeri komutlarını bulunduran komut listesini gösterir.", true)
-.addField(":photoshop:  +efekt", "Avatarınıza verebileceğiniz harika efektler, komikli meme(caps)leri bulunduran komut listesini gösterir", true)
-.addField(":moderation:  +admin", "Sunucunuzu daha iyi yönetebileceğiniz, admin ve moderatör komut listesini gösterir", true)
-.addField(":eglence:  +eğlence", "Sunucunuz da hoş vakit geçirebileceğiniz eğlence komut listesini gösterir ", true)
-.addField(":Upvoted:  +seviye", "Profil, maaş ve marketi içinde barındıran ayrıntılı seviye sistemi komut listesini gösterir", true)
-.addField(":8187_crystal_cluster:  +genel", "Diğer kategorilerin dışında birbirinden farklı komut listesini gösterir", true)
+.addField("<:cay:731000115149668383>  +anakomutlar", "Çayın temel olan çay iç ve benzeri komutlarını bulunduran komut listesini gösterir.", true)
+.addField("<:photoshop:731001860768399420>  +efekt", "Avatarınıza verebileceğiniz harika efektler, komikli meme(caps)leri bulunduran komut listesini gösterir", true)
+.addField("<:moderation:731002423967219752>  +admin", "Sunucunuzu daha iyi yönetebileceğiniz, admin ve moderatör komut listesini gösterir", true)
+.addField("<:eglence:731002417398677585>  +eğlence", "Sunucunuz da hoş vakit geçirebileceğiniz eğlence komut listesini gösterir ", true)
+.addField("<:Upvoted:731002774237741116>  +seviye", "Profil, maaş ve marketi içinde barındıran ayrıntılı seviye sistemi komut listesini gösterir", true)
+.addField("<:8187_crystal_cluster:731003873858420749>  +genel", "Diğer kategorilerin dışında birbirinden farklı komut listesini gösterir", true)
 .setFooter("Çay Bot | Davet linki: https://bit.ly/cayreyis", this.client.user.avatarURL)
 .setColor("#f4c2c2")
 msg.say(yardim);    
