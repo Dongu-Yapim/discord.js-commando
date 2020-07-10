@@ -28,7 +28,7 @@ module.exports = class HelpCommand extends Command {
 		});
 	}
 
-	async oldrun(msg, args) {
+	async run(msg, args) {
 		const groups = this.client.registry.groups;
 		const commands = this.client.registry.findCommands(args.command, false, msg);
 		const showAll = args.command && args.command.toLowerCase() === 'hepsi';
@@ -91,7 +91,7 @@ module.exports = class HelpCommand extends Command {
 				.setColor('RANDOM')
 				.setTitle('Komut Listesi')
 				.addBlankField()
-				.setFooter('© ' + (new Date()).getFullYear() + ' Kahve', this.client.user.avatarURL);
+				.setFooter('© ' + (new Date()).getFullYear() + ' Çay', this.client.user.avatarURL);
 				
 				groups.forEach(group =>
                     			helpbed.addField(`**${group.name}**`,
