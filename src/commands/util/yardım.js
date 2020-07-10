@@ -22,13 +22,13 @@ module.exports = class HelpCommand extends Command {
 					key: 'command',
 					prompt: 'Hangi komut hakkında yardım istiyorsun?',
 					type: 'string',
-					default: 'hepsi'
+					default: ''
 				}
 			]
 		});
 	}
 
-	async run(msg, args) {
+	async oldrun(msg, args) {
 		const groups = this.client.registry.groups;
 		const commands = this.client.registry.findCommands(args.command, false, msg);
 		const showAll = args.command && args.command.toLowerCase() === 'hepsi';
