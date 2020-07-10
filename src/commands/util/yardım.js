@@ -104,7 +104,7 @@ module.exports = class HelpCommand extends Command {
 	
 				messages.push(await msg.channel.send({embed: helpbed}));
 				
-				if(msg.channel.type == 'dm') {
+				if(msg.channel.type === 'dm') {
                 msg.reply("Yardım komutları ancak sunucularda çalışabilir.");
 				}
 			} catch(err) {
