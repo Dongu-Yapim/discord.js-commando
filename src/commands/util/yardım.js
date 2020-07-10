@@ -126,9 +126,9 @@ module.exports = class HelpCommand extends Command {
         var groups = this.client.registry.groups.map(g => g.id);
         const emb = new Discord.MessageEmbed()
         .setTitle("Komut Grupları")
-        .setDescription(client.registry.groups.map(c=> `• [${msg.guild.commandPrefix}yardım ${c.id}](https://bit.ly/cayreyis) => ${c.name}`))
+        .setDescription(this.client.registry.groups.map(c=> `• [${msg.guild.commandPrefix}yardım ${c.id}](https://bit.ly/cayreyis) => ${c.name}`))
         .setColor(0xf4a460)
-        .setFooter(`Örnek Kullanım: ${msg.guild.commandPrefix}yardım çay`)
+        .setFooter(`Örnek Kullanım: ${msg.guild.commandPrefix}yardım test`)
         if (!args.command.toLowerCase()) return msg.embed(emb);
 
         if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(`${msg.member.toString()}, lütfen doğru komut grubundan yardım alın.`, {embed: emb})
