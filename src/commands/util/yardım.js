@@ -4,29 +4,28 @@ const disambiguation = require('../../util').disambiguation;
 const Discord = require('discord.js');
 
 module.exports = class HelpCommand extends Command {
-	constructor(client) {
-		super(client, {
-			name: 'yardım',
-			group: 'util',
-			memberName: 'yardım',
-			aliases: ['commands', 'y', 'komutlar', 'help', 'halp', 'h', 'k'],
-			description: 'Tüm komutları listeler. İsterseniz bir komut hakkında yardım eder.',
-			details: oneLine`
-					Yardım için herhangi bir komut adı belirtebilirsiniz.
-					Bir komut belirtilmezse, mevcut tüm kullanılabilir komutlar listelenir.
-			`,
-			examples: ['yardım hepsi', 'yardım <komut>'],
-			
-			args: [
-				{
-					key: 'command',
-					prompt: 'Hangi komut hakkında yardım istiyorsun?',
-					type: 'string',
-					default: ''
-				}
-			]
-		});
-	}
+  constructor(client) {
+    super(client, {
+      name: 'komutlar',
+      group: 'util',
+      memberName: 'komutlar',
+      aliases: ['komutlar', 'yardım', 'help', 'y', 'k', 'tümkomutlar'],
+      description: 'Komutlar hakkında ayrıntılı bilgi sunar',
+      examples: ['komutlar'],
+      guarded: true,
+      details: oneLine`
+        Komutlar hakkında bilgi verir.
+      `,
+      args: [
+        {
+          key: 'Komut',
+          prompt: 'Hangi komut hakkında bilgi lazım?',
+          type: 'string',
+          default: ''
+        }
+      ]
+    })
+  }
 
 	async oldrun(msg, args) {
 		const groups = this.client.registry.groups;
