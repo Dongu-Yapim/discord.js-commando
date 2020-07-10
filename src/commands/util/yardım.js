@@ -34,7 +34,8 @@ module.exports = class HelpCommand extends Command {
 
 		
 
-
+let group;
+var groups = this.client.registry.groups.map(g => g.id);
 
 const Discord = require("discord.js");
 const yardim = new Discord.RichEmbed()
