@@ -25,7 +25,6 @@ module.exports = class HelpCommand extends Command {
 const Discord = require("discord.js");
 const yardim = new Discord.RichEmbed()
 .setTitle("Çay Bot Tüm Komutlar Listesi")
-.setThumbnail(this.client.user.avatarURL)
 .addField(":cay~1:  +anakomutlar", "Çayın temel olan çay iç ve benzeri komutlarını bulunduran komut listesini gösterir.", true)
 .addField(":photoshop:  +efekt", "Avatarınıza verebileceğiniz harika efektler, komikli meme(caps)leri bulunduran komut listesini gösterir", true)
 .addField(":moderation:  +admin", "Sunucunuzu daha iyi yönetebileceğiniz, admin ve moderatör komut listesini gösterir", true)
