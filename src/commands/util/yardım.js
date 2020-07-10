@@ -46,7 +46,7 @@ const yardim = new Discord.RichEmbed()
 .addField("<:eglence:731002417398677585>  +eğlence", "Sunucunuz da hoş vakit geçirebileceğiniz eğlence komut listesini gösterir ", true)
 .addField("<:Upvoted:731002774237741116>  +seviye", "Ayrıntılı seviye sisteminin çay içinde komut listesini gösterir", true)
 .addField("<:8187_crystal_cluster:731003873858420749>  +genel", "Diğer kategorilerin dışında birbirinden farklı komut listesini gösterir", true)
-.setFooter("Çay Bot | Davet linki: https://bit.ly/cayreyis", this.client.user.avatarURL)
+.setFooter("Çay ve dünyanın en iyi topluluğu " + msg.guild)
 .setColor("#f4c2c2")
 if (!args.command.toLowerCase()) return msg.say(yardim);   
 
@@ -56,7 +56,7 @@ if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(
 
 
         const helpbed = new Discord.RichEmbed()
-        .setAuthor(group.name, client.user.avatarURL, 'https://bit.ly/cayreyis')
+        .setAuthor(group.name, this.client.user.avatarURL, 'https://bit.ly/cayreyis')
         .setDescription(`
         ${group.commands.map(g => `[${g.name}](https://bit.ly/cayreyis): ${g.description}`).join("\n")}
                 `)
