@@ -1,7 +1,7 @@
 const { stripIndents, oneLine } = require('common-tags');
-const Command = require('../base');
 const disambiguation = require('../../util').disambiguation;
 const Discord = require('discord.js');
+const { Command } = require('discord.js-commando')
 
 module.exports = class HelpCommand extends Command {
   constructor(client) {
