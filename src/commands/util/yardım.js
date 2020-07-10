@@ -52,11 +52,7 @@ module.exports = class HelpCommand extends Command {
 
 				const messages = [];
 				try {
-					messages.push(await msg.direct(help));
-					if(msg.channel.type !== 'dm') messages.push(await msg.reply('Özel mesajlarını kontrol et. :postbox:'));
-				} catch(err) {
-					messages.push(await msg.reply('Komutları özel mesaj olarak sana gönderemiyorum. Sanırım özel mesajların kapalı.'));
-				}
+					messages.push(await msg.channel.send(help));
 				return messages;
 			} else if(commands.length > 1) {
 				return msg.reply(disambiguation(commands, 'commands'));
