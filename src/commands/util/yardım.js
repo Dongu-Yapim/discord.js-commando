@@ -22,6 +22,9 @@ module.exports = class HelpCommand extends Command {
 	async run(msg, args) {
 
 		
+
+
+
 const Discord = require("discord.js");
 const yardim = new Discord.RichEmbed()
 .setTitle("Çay Bot Tüm Komutlar Listesi")
@@ -33,6 +36,22 @@ const yardim = new Discord.RichEmbed()
 .addField("<:8187_crystal_cluster:731003873858420749>  +genel", "Diğer kategorilerin dışında birbirinden farklı komut listesini gösterir", true)
 .setFooter("Çay Bot | Davet linki: https://bit.ly/cayreyis", this.client.user.avatarURL)
 .setColor("#f4c2c2")
-msg.say(yardim);    
+if (!args.command.toLowerCase()) return msg.say(yardim);   
+
+
+if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(`${msg.member.toString()}, girilen komut grubu hatalı.`, {embed: emb})
+        if (this.client.registry.groups.has(args.command.toLowerCase())) group = this.client.registry.groups.get(args.command.toLowerCase());
+
+
+        const helpbed = new Discord.RichEmbed()
+        .setTitle(group.name)
+        .setDescription(`
+        ${group.commands.map(g => `[${g.name}](https://bit.ly/cayreyis): ${g.description}`).join("\n")}
+                `)
+        .setColor(0xf4a460)
+        msg.embed(helpbed)
+
+
+ 
 	}
 };
