@@ -39,9 +39,9 @@ var groups = this.client.registry.groups.map(g => g.id);
 
 const Discord = require("discord.js");
 const yardim = new Discord.RichEmbed()
-.setTitle("Çay Bot Tüm Komutlar Listesi")
-.addField("<:cay:731000115149668383>  +anakomutlar", "Çayın temel olan çay iç ve benzeri komutlarını bulunduran komut listesini gösterir.", true)
-.addField("<:photoshop:731001860768399420>  +efekt", "Avatarınıza verebileceğiniz harika efektler, komikli meme(caps)leri bulunduran komut listesini gösterir", true)
+.setTitle("Çay Bot Komut Listesi")
+.addField("<:cay:731000115149668383>  +yardım çay", "Çayın temel olan çay iç ve benzeri komutlarını bulunduran komut listesini gösterir.", true)
+.addField("<:photoshop:731001860768399420>  +efekt", "Avatarınıza verebileceğiniz harika efektler ve caspleri bulunduran komut listesini gösterir", true)
 .addField("<:moderation:731002423967219752>  +admin", "Sunucunuzu daha iyi yönetebileceğiniz, admin ve moderatör komut listesini gösterir", true)
 .addField("<:eglence:731002417398677585>  +eğlence", "Sunucunuz da hoş vakit geçirebileceğiniz eğlence komut listesini gösterir ", true)
 .addField("<:Upvoted:731002774237741116>  +seviye", "Ayrıntılı seviye sisteminin çay içinde komut listesini gösterir", true)
@@ -51,12 +51,12 @@ const yardim = new Discord.RichEmbed()
 if (!args.command.toLowerCase()) return msg.say(yardim);   
 
 
-if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(`${msg.member.toString()}, girilen komut grubu hatalı.`, {embed: emb})
+if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(`Girdiğiniz komut yanlış, şu şekilde kullanacaksınız: **+yardım efekt**`, {embed: emb})
         if (this.client.registry.groups.has(args.command.toLowerCase())) group = this.client.registry.groups.get(args.command.toLowerCase());
 
 
         const helpbed = new Discord.RichEmbed()
-        .setTitle(group.name)
+        .setAuthor(group.name, client.user.avatarURL, 'https://bit.ly/cayreyis')
         .setDescription(`
         ${group.commands.map(g => `[${g.name}](https://bit.ly/cayreyis): ${g.description}`).join("\n")}
                 `)
