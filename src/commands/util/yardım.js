@@ -9,7 +9,7 @@ module.exports = class HelpCommand extends Command {
 			name: 'yardım',
 			group: 'util',
 			memberName: 'yardım',
-			aliases: ['commands', 'y', 'komutlar', 'help', 'halp', 'h', 'k'],
+			aliases: ['commands', 'y', 'komutlar', 'help', 'halp', 'h'],
 			description: 'Tüm komutları listeler. İsterseniz bir komut hakkında yardım eder.',
 			details: oneLine`
 					Yardım için herhangi bir komut adı belirtebilirsiniz.
@@ -99,7 +99,7 @@ module.exports = class HelpCommand extends Command {
                             				.map(command => `\`${command.name}\` - ${command.description}`)
                             					.join('\n')));
 	
-				messages.push(await msg.author.send({embed: helpbed}));
+				messages.push(await msg.channel.send({embed: helpbed}));
 				
 				if(msg.channel.type !== 'dm') {
 					const dmbed = new Discord.RichEmbed()
