@@ -28,7 +28,7 @@ module.exports = class HelpCommand extends Command {
 		});
 	}
 
-	async oldrun(msg, args) {
+	async run(msg, args) {
 		const groups = this.client.registry.groups;
 		const commands = this.client.registry.findCommands(args.command, false, msg);
 		const showAll = args.command && args.command.toLowerCase() === 'hepsi';
