@@ -63,9 +63,10 @@ const yardim = new Discord.RichEmbed()
 .setColor("#f4c2c2")
 if (!args.command.toLowerCase()) return msg.say(yardim);   
 }
-
-
-if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(`Girdiğiniz komut yanlış, şu şekilde kullanacaksınız: **+yardım efekt**`, {embed: emb})
+const Discord = require("discord.js");
+const hatam = new Discord.RichEmbed()
+.setDescription(`Girdiğiniz komut yanlış, şu şekilde kullanacaksınız:\n**+yardım efekt**`)
+if (!groups.some(g => args.command.toLowerCase() == g)) return msg.channel.send(hatam)
         if (this.client.registry.groups.has(args.command.toLowerCase())) group = this.client.registry.groups.get(args.command.toLowerCase());
 
 
